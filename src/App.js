@@ -6,6 +6,8 @@ import AddLogModal from './compents/logs/AddLogModal';
 import EditLogModal from './compents/logs/EditLogModal';
 import AddTechModal from './compents/techs/AddTechModal';
 import TechListModal from './compents/techs/TechListModal';
+import {Provider } from 'react-redux'
+import store from './store'
 
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
@@ -17,6 +19,7 @@ const App = () => {
 		M.AutoInit();
 	});
 	return (
+		<Provider store={store}>
 		<div className="App">
 			<Navbar />
 			<div className="container">
@@ -28,6 +31,7 @@ const App = () => {
 				<Logs />
 			</div>
 		</div>
+		</Provider>
 	);
 };
 
